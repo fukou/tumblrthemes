@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html>
+
+<!-------
+           
+           Title:    {Title}
+           BlogURL: {BlogURL}
+           
+         _______  __    __   __  ___  ___   __    ______  
+        |   ____||  |  |  | |  |/  / |  |  |  |  /  __  \  
+        |  |__   |  |  |  | |  '  /  |  |  |  | |  |  |  |
+        |   __|  |  |  |  | |    <   |  |  |  | |  |  |  |
+        |  |     |  `--'  | |  .  \  |  `--'  | |  `--'  |
+        |__|      \______/  |__|\__\  \______/   \______/  
+                       
+                  (C) FUKUO.TUMBLR.COM / BANDA NEIRA
+                            
+                Do not remove this comment and credit. 
+         If you have a problem with this theme, please contact me at fukuo.tumblr.com/contact/
+         
+        
+-------->
+
+<head>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>{block:TagPage}{Tag} : {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostSummary}{PostSummary} : {/block:PostSummary}{Title}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <link rel="stylesheet" href="https://static.tumblr.com/5ojoydj/l1konxlcs/fukuo-outicons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,600italic|PT+Serif' rel='stylesheet' type='text/css'>
+    <!-- Main jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="https://static.tumblr.com/5ojoydj/p9wmmzopi/jquery.style-my-tooltips.js"></script>
+    <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://static.tumblr.com/5ojoydj/cAFov826r/styles.css">
+    <link rel="stylesheet" href="https://static.tumblr.com/5ojoydj/CYho53ofs/outicons.css">
+    <meta name="image:Main Icon" content="https://static.tumblr.com/5ojoydj/tmoo8hoyw/dsadsdsdsaf.png"/>
+    
+    {block:Hidden}
+    <meta name="select:Layout style" content="timeline_p" title="Timeline Layout">
+    <meta name="select:Layout style" content="simple_p" title="Simple Layout">
+    <meta name="select:Layout style" content="random_p" title="Randomized Layout">
+    
+    <meta name="color:Accent Color One" content="#b79fbc" />
+    <meta name="color:Accent Color Two" content="#444" />
+    <meta name="color:Accent Color Three" content="#aaa" />
+    <meta name="color:Accent Color Four" content="#ddd" />
+       
+    <meta name="color:Background Color" content="#ffffff" />
+    
+    <meta name="color:Body Text" content="#444444" />
+    <meta name="color:Header Text" content="#222222" />
+    <meta name="color:Body Ask Text" content="#ffffff" />
+    <meta name="color:Article" content="#eeeeee" />
+    <meta name="color:Selection Color" content="#111" />
+    <meta name="color:Selection Background" content="#f8ff92" />
+    
+    <meta name="text:Custom Link One" content="ABOUT"/>
+    <meta name="text:Custom Link One URL" content="http://"/>
+    <meta name="text:Custom Link Two" content="DIRECTORY"/>
+    <meta name="text:Custom Link Two URL" content="http://"/>
+    {/block:Hidden}
+     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
+       <style type="text/css">
+       
+        @import 'https://fonts.googleapis.com/css?family=Roboto+Mono';
+       
+        body {
+            background-color:{color:Background Color};
+            margin: 0;
+            padding: 0;
+            {block:IndexPage}
+            overflow-x:scroll;
+            overflow-y:hidden;
+            {/block:IndexPage}
+            {block:PermalinkPage}
+            overflow-x:hidden;
+            overflow-y:scroll;
+            {/block:PermalinkPage}
+        }
+        
+        body, html {
+            height:100%;
+        }
+        
+        body hr {
+            width:50%;
+            height:1px;
+            background-color:{color:Accent Color One};
+            color:#aaa;
+            border:0;
+            margin:5% auto;
+        }
+        
+        body a,
+        body a:hover,
+        body a:visited {color: {color:Accent Color Two}; text-decoration:none;}
+        
+        iframe#tumblr_controls, .tmblr-iframe.tmblr-iframe--desktop-loggedin-controls.iframe-controls--desktop, .tmblr-iframe  {
+            display:block!important;
+            position:fixed!important;
+            padding:20px!important;
+            z-index:987654321!important;
+            opacity:0.7;
+            margin-right:-10px;
+            transform:scale(0.8,0.8);
+             -webkit-filter:invert(100%);
+    filter:invert(100%);
+
+        }
+        
+        .vignette, #vignette { opacity:0;}
+        
+        .lightbox-image, #tumblr_lightbox img {
+            box-shadow:none !important;
+            border-radius:4px!important;
+            max-width:none;
+        }
+        
+        .tmblr-lightbox, #tumblr_lightbox {
+            background-color:rgba(255,255,255,.96) !important;
+            z-index:999999999;
+        }
+        
+        ::-webkit-scrollbar {
+                width:18px;
+                background-color:{color:Background Color};
+        }
+         ::-webkit-scrollbar-track {
+                border:7px solid {color:Background Color};
+                background-color:{color:Background Color};
+        }
+        ::-webkit-scrollbar-thumb {
+                border:7px solid  {color:Background Color};
+                background-color:{color:Header Text};
+        }
+    
+        ::selection {
+            background:{color:Selection Background};
+            color:{color:Selection Color};
+            }
+         
+        ::-moz-selection {
+            background:{color:Selection Background};
+            color:{color:Selection Color};
+            }
+         
+        ::-webkit-selection {
+            background:{color:Selection Background};
+            color:{color:Selection Color};
+        }
+        
+        main {
+            width: calc(100% - 250px);
+            width:-webkit-calc(100% - 250px);
+            height: 100%;
+            background: transparent;
+            position: absolute;
+            top: 0%;
+            left: 0px;
+            padding-left: 150px;
+            background-repeat:repeat;
+            background-repeat: repeat;
+            -webkit-transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+            -moz-transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+            -o-transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+            transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+            -webkit-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        }
+        
+        main.menghilang {
+            top: 100%;
+        }
+        
+        .slide-container {
+            {block:IndexPage}
+            position: absolute;
+            width:auto;
+            height: 246px;
+            top: 50%;
+            left: 260px;
+            {/block:IndexPage}
+            {block:PermalinkPage}
+            width: 350px;
+            height: 100%;
+            margin:80px auto;
+            padding-bottom:50px;
+            {/block:PermalinkPage}
+            -webkit-animation: fadein 2s; 
+            -moz-animation: fadein 2s;
+            -ms-animation: fadein 2s; 
+            -o-animation: fadein 2s; 
+            animation: fadein 2s;
+        }
+         
+        .fku-code {
+            position:absolute;
+            left:0px;
+            bottom:-50px;
+            display:block;
+            width:240px;
+            text-align:center;
+            padding:10px;
+            font-size:13px;
+            font-weight:bold;
+        }
+        
+         aside {
+            {block:IndexPage}
+            display:none;
+            {/block:IndexPage}
+            {block:PermalinkPage}
+            display:block;
+            {/block:PermalinkPage}
+            width:250px;
+            background-color:{color:Article};
+            position:fixed;
+            left:50%;
+            top:0px;
+            margin-top:83px;
+            margin-left:-500px;
+            font-family:"Source Sans Pro", sans-serif;
+            font-size:15px;
+        }
+       
+        aside .body_aside {
+            position:relative;
+            padding:25px;
+            font-size:13.5px;
+            line-height:170%;
+        }
+        
+        aside .body_aside ul {
+            display:block;
+            margin-left:-23px;
+        }
+        
+        aside .body_aside ul li {
+            list-style:none;
+            display:inline-block;
+        }
+        
+        aside .body_aside ul li a {
+            font-weight:bold;
+        }
+        
+        aside .body_aside ul li a:hover {
+            color:{color:Accent Color One};
+            text-decoration:underline;
+        }
+        
+        aside .body_aside ul li a:after {
+            content:'/';
+            margin-left:10px;
+            margin-right:10px;
+            color:{color:Accent Color One};
+        }
+        
+        aside .body_aside ul li:last-child a:after {
+            display:none;
+        }
+        
+        {block:IndexPage}
+        .slide-container.random_p {
+            transform: translate(0%, -60%);
+        }
+        .slide-container.timeline_p {
+            transform: translate(0%, -50%);
+        }
+        .slide-container.simple_p {
+            transform: translate(0%, -90%);
+        }
+        {/block:IndexPage}
+        
+        .slider {
+            position:relative;
+            margin-right:-6500px;
+            {block:IndexPage}
+            height: 400px;
+            {/block:IndexPage}
+            {block:PermalinkPage}
+            height: auto;
+            {/block:PermalinkPage}
+            -webkit-transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -moz-transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -o-transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        }
+        
+        .garis.random_p {display:none;}
+        
+        .garis.timeline_p {
+            {block:IndexPage}
+            display:block;
+            {/block:IndexPage}
+            {block:PermalinkPage}
+            display:none;
+            {/block:PermalinkPage}
+            {block:TagPage}
+            display:none;
+            {/block:TagPage}
+            position: absolute;
+            left: 0px;
+            top: -64px;
+            width: 100%;
+            height: 4px;
+            background-color:{color:Accent Color Four};
+        }
+        
+        article.post .masalalu {
+            {block:PermalinkPage}
+            display:none;
+            {/block:PermalinkPage}
+            width:170px;
+            text-align:left;
+            position:absolute;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: calc(15px + 0.25vw);
+            line-height: 170%;
+            margin:-110px 0 0 70px;
+            padding: 5px 5px 5px 10px;
+        }
+        
+         article.post .masalalu:before {
+            content:'';
+            position:absolute;
+            top:40px;
+            left:45px;
+            width:15px;
+            height:15px;
+            -moz-border-radius:100%;
+            -webkit-border-radius:100%;
+            border-radius:100%;
+            background-color:#aaa;
+            z-index:999;
+        }
+        
+        article.post .masalalu:after {
+            content:'';
+            position:absolute;
+            top:50px;
+            left:50px;
+            width:5px;
+            height:60px;
+            background-color:{color:Accent Color Four};
+        }
+        
+        article.post .posisiwindows {
+            position:absolute;
+            width:120px;
+            height:40px;
+            right:-14px;
+            top:0px;
+            overflow:hidden;
+        }
+        
+       .tombolwindows {
+            display:inline-block;
+            width:25px;
+            margin:8px 0 0 0px;
+            font-family:consolas;
+        }
+        
+        .tombolwindows span:nth-child(1) {
+            position:absolute;
+            color: {color:Body Ask Text};
+            font-size:23px;
+            height:10px;
+            padding:14px 0 15px 5px;
+            margin:-27px 0 0 7px;
+        }
+        
+        
+        .tombolwindows span:nth-child(2) {
+            position:absolute;
+            color: {color:Body Ask Text};
+            font-size:23px;
+            height:20px;
+            padding:8px 0 3px 5px;
+            margin:-20px 0 0 42px;
+        }
+        
+        .tombolwindows span:nth-child(3) {
+            position:absolute;
+            color: {color:Body Ask Text};
+            font-size:23px;
+            height:20px;
+            padding:8px 0 3px 5px;
+            margin:-20px 0 0 76px;
+        }
+        
+        .ditutupnya {width:13px;fill: {color:Body Ask Text};}
+        .ditutupnya2 {width:13px;fill:{color:Body Ask Text};}
+        
+        .pelebarannya {
+            fill:none;
+            stroke:#fff;
+            stroke-width:8;
+            stroke-miterlimit:10;
+        }
+        
+        .pelebarannya2 {
+            fill:none;
+            stroke:#fff;
+            stroke-width:5;
+            stroke-miterlimit:10;
+        }
+        
+        article.post .tanggalmainnya {
+            color: {color:Body Ask Text};
+            background-color:{color:Accent Color Two};
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 13px;
+            line-height: 170%;
+            padding: 5px 5px 5px 10px;
+        }
+    
+        article.post .tanggalmainnya a { color:{color:Body Ask Text};}
+        
+        article.post .tanggalmainnya span {
+            padding-right: 5px;
+        }
+        
+        @keyframes fadein {
+         from { opacity: 0; }
+         to   { opacity: 1; }
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        
+        /* Firefox < 16 */
+        @-moz-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        
+        /* Safari, Chrome and Opera > 12.1 */
+        @-webkit-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        
+        /* Internet Explorer */
+        @-ms-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        
+        /* Opera < 12.1 */
+        @-o-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+    
+        article.post {
+            counter-increment: list;
+            position: relative;
+            background-color:{color:Article};
+            margin-right: 1%;
+            float: left;
+            border:none!important;
+            {block:PermalinkPage}
+            width:600px;
+            cursor: auto;
+            height: auto;
+            margin-bottom:40px;
+            {/block:PermalinkPage}
+        }
+        
+        
+        
+        article.post img {
+            max-width:100%;
+            display:block;
+        }
+        
+        
+        {block:IndexPage}
+        .post.random_p {
+            width: 550px;
+            height: 350px;
+        }
+        
+        .post.simple_p {
+            position:relative;
+            width: 650px;
+            height: 450px;
+        }
+        
+        .post.timeline_p { 
+            width: 550px;
+            height: 350px;
+        }
+        {/block:IndexPage}
+        
+        
+        .chat-simple {
+            font-family:"Source Sans Pro", sans-serif;
+            font-size:17px;
+            line-height:170%;
+            padding:40px;
+        }
+        
+        .post.timeline_p .chat-simple {
+            display:none;
+        }
+        
+        .post.timeline_p .chat {
+            display:block;
+        }
+        
+        .post.simple_p .chat, .post.random_p .chat {
+            display:none;
+        }
+        
+        .post.simple_p .chat-simple, .post.random_p .chat-simple {
+            display:block;
+        }
+        
+        article.post_audio { height: 350px; margin-bottom:-3px;}
+        
+        article.post:before {
+            {block:PermalinkPage}
+            display:none;
+            {/block:PermalinkPage}
+            {block:TagPage}
+            display:none;
+            {/block:TagPage}
+            content: counter(list, decimal-leading-zero);
+            font-size: 18px;
+            text-align: center;
+            background-color: {color:Accent Color Two};
+            color: {color:Background Color};
+            border: 8px solid {color:Accent Color Four};
+            font-family: 'Roboto Mono', monospace;
+            padding: 10px 12px 10px 12px;
+            position: absolute;
+            margin-top: -90px;
+            border-radius: 100%;
+            z-index: 5;
+        }
+        
+        {block:IndexPage}
+        .post.random_p:before, .masalalu.random_p {display:none;}
+        .post.simple_p:before, .masalalu.simple_p {display:none; }
+        .post.timeline_p:before, .masalalu.timeline_p { display:block;}
+        {/block:IndexPage}
+        
+        .slider article.post > .pembesaran {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.74);
+            border-radius: 100%;
+            right: 20px;
+            top: 50px;
+            padding: 9px 5px 8px 5px;
+            opacity: 0;
+            visibility: hidden;
+            cursor: pointer;
+            -webkit-transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+            -moz-transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+            -o-transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+            transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+        }
+        
+        article.post:hover .pembesaran {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .slider article.post > .pembesaran span {
+            font-size: calc(30px + 0.25vw);
+            color: #fff;
+        }
+        
+        article.post > .audio {
+            position: absolute;
+            width: 60px;
+            height: 50px;
+            background-color: #000;
+            opacity:0.7;
+            left: 30%;
+            top: 55%;
+            transform: translate(-50%, -50%);
+            padding: 9px 5px 8px 5px;
+        }
+        
+        .tumblr_audio_player {
+            position:absolute;
+            margin:10px 0 0 12px;
+            width:30px;
+            height:50px;
+        }
+        
+        .audio-player {
+            width:25px!important;
+            overflow:hidden!important;
+        }
+        
+        article.post > .audio span {
+            font-size: calc(30px + 0.25vw);
+            color: {color:Body Ask Text};
+        }
+        
+        .album_art {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transform: translate(-50%, -50%);
+            left: 30%;
+            top: 55%;
+            background-color: {color:Accent Color Four};
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.17);
+        }
+        
+        .album_blur {
+            position: absolute;
+            left: 0px;
+            top: 31px;
+            width: 100%;
+            height: calc(100% - 32px);
+            overflow: hidden;
+            background-color:transparent;
+        }
+        
+        .album_blur img {
+            position: absolute;
+            top:-10px;
+            left:-10px;
+            width: 120%;
+            -webkit-filter: blur(9px);
+            -moz-filter: blur(9px);
+            -o-filter: blur(9px);
+            -ms-filter: blur(9px);
+            filter: blur(9px);
+        }
+        
+        .audioplayer {
+            position: absolute;
+            width: 220px;
+            height: 200px;
+            transform: translate(-4.5%, -50%);
+            left: 50%;
+            top: 55%;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.17);
+            background-color: rgba(0, 0,0, 0.65);
+        }
+        
+        .audioplayer .audio_information {
+            position: absolute;
+            width: 180px;
+            left: 50%;
+            top: 50%;
+            text-align: left;
+            color: {color:Body Ask Text};
+            line-height: 170%;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: calc(11px + 0.25vw);
+            transform: translate(-50%, -50%);
+        }
+        
+        .audioplayer .audio_information p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .audioplayer .audio_information p span {
+            color: #f5e5e6;
+        }
+        
+        article.post > .keterangan_foto {
+            display: none;
+            position: absolute;
+            left: 50%;
+            bottom: 6%;
+            transform: translateX(-50%);
+            width: 93%;
+            max-height: 81%;
+            min-height: auto;
+            background-color: rgba(255, 255, 255, 0.76);
+            color: {color:Accent Color Two};
+            font-family: 'PT Serif', serif;
+            font-size: calc(10px + 0.25vw);
+            line-height: 100%;
+        }
+        
+        article.keterangan_foto p {
+            padding: 5%;
+            margin-top: 0;
+            line-height: 170%;
+        }
+        
+        .post.random_p:nth-child(2n+2) {
+           {block:PermalinkPage}
+           margin-top:50px;
+           {/block:PermalinkPage}
+           {block:IndexPage}
+           margin-top: -100px;
+           {/block:IndexPage}
+        }
+        
+        
+        .post.random_p:nth-child(3n+1) {
+           margin-top:50px;
+        }
+        
+        article.post h1 {
+            font-family: 'Source Sans Pro', sans-serif;
+            color:{color:Body Text};
+            font-size: 25px;
+            line-height: 170%;
+            padding: 10px 10px 10px 30px;
+            border-bottom: 1px solid {color:Accent Color Four};
+            margin-top: 0px;
+            margin-bottom: -25px;
+        }
+        
+        .post blockquote {
+            margin-left: 0px;
+            border-left: 1px solid {color:Accent Color Four};
+            padding: 0px 0px 0px 20px;
+            color: {color:Body Text};
+        }
+        
+        .body_image {
+            overflow:hidden;
+        }
+        
+        {block:IndexPage}
+        .body_image.random_p img {
+            height: 319px;
+        }
+        
+        .body_image.simple_p img  {
+            height: 419px;
+        }
+        
+        .body_image.timeline_p img { 
+            height: 319px;
+        }
+        {/block:IndexPage}
+        
+        
+         .highres.simple_p {
+            {block:IndexPage}
+            height:419px;
+            {/block:IndexPage}
+        }
+        
+        .highres.random_p {
+            {block:IndexPage}
+            height:319px;
+            {/block:IndexPage}
+        }
+        
+        .highres.timeline_p {
+            {block:IndexPage}
+            height:319px;
+            {/block:IndexPage}
+        }
+        
+        .body_image img {
+            width:100%;
+            {block:PermalinkPage}
+            height:auto;
+            {/block:PermalinkPage}
+            object-fit: cover;
+        }
+        
+        article.post > .body_text {
+            position: relative;
+            {block:IndexPage}
+            height: calc(100% - 130px);
+            font-size: 15px;
+            {/block:IndexPage}
+            {block:PermalinkPage}
+            height:100%;
+            font-size: 16px;
+            {/block:PermalinkPage}
+            padding: 30px;
+            line-height: 180%;
+            overflow: hidden;
+            font-family: 'Source Sans Pro', sans-serif;
+            color: {color:Body Text};
+        }
+        
+        article.post > .body_text a {
+            border-bottom:2px solid {color:Accent Color One};
+            padding-bottom:2px;
+        }
+        
+        article.post > .body_text a:hover {
+            color:{color:Accent Color Two};
+            font-weight:bold;
+            border-bottom:2px solid {color:Accent Color Two};
+        }
+        
+        {block:IndexPage}
+        article.post .body_text:after, .jawaban:after, .kutipannya:after {
+            content:'';
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 90px;
+            background: linear-gradient(0deg, rgb({RGBcolor:Article}), rgba({RGBcolor:Article}, 0.26));
+            bottom: 0px;
+            left: 0px;
+        }
+        {/block:IndexPage}
+        
+        article.post > .body_caption {
+            padding: 7px 30px 10px 30px;
+            line-height: 180%;
+            font-size: calc(13px + 0.20vw);
+            font-family: 'Source Sans Pro', sans-serif;
+            color: {color:Body Text};
+            border:none!important;
+        }
+        
+        .sumbernya {
+            {block:IndexPage}
+            position:absolute;
+            bottom:0px;
+            left:0px;
+            {/block:IndexPage}
+            {block:PermalinkPage}
+            position:relative;
+            {/block:PermalinkPage}
+            font-size: 15px;
+            padding:22px;
+            font-family: 'Source Sans Pro', sans-serif;
+            color: {color:Body Text};
+        }
+        
+        .kutipannya {
+            position: relative;
+            width: calc(100% - 60px);
+            height: calc(100% - 155px);
+            padding: 30px;
+            line-height: 180%;
+            font-size: 23px;
+            overflow: hidden;
+            font-family: 'PT Serif', serif;
+            color: {color:Body Text};
+        }
+        
+        .kutipannya:before {
+            content: '“';
+            float: left;
+            position: absolute;
+            font-family: Arial;
+            margin: 20px 0px 0px -20px;
+            padding-left: 5px;
+            padding-right: 5px;
+            font-size: 125px;
+            color: {color:Body Text};
+            opacity: 0.2;
+        }
+        
+        .holder_description {
+            position: fixed;
+            left: 0px;
+            top: -100%;
+            z-index: 99999;
+            width: 100%;
+            height: 100%;
+            background-color:{color:Background Color};
+            overflow: hidden;
+            -webkit-transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+            -moz-transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+            -o-transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+            transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        }
+        
+        .holder_description.kebawah {
+            top: 0%;
+        }
+        
+        .holder_description:before {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: -50px;
+            width: 120%;
+            height: 120%;
+            background-repeat: repeat;
+            -webkit-filter: blur(15px);
+            -moz-filter: blur(15px);
+            -o-filter: blur(15px);
+            -ms-filter: blur(15px);
+            filter: blur(15px);
+        }
+        
+        .actual_description {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: calc(450px + 0.25vw);
+            color: {color:Body Text};
+            text-align: center;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: calc(15px + 0.25vw);
+            line-height: 170%;
+           -webkit-transition: all 350ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+            -moz-transition: all 350ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+            -o-transition: all 350ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+             transition: all 350ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+        }
+        
+        .diamuncul {
+            visibility:visible;
+            opacity:1;
+            -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+        }
+        
+        .diahilang {
+            opacity:0;
+            visibility:hidden;
+            -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+        }
+        
+        .garis_pertama {
+            position:absolute;
+            right:-120%;
+            top:0px;
+            width:100%;
+            height:100%;
+            background-color:{color:Body Text};
+            z-index:999999999;
+            -webkit-transition: all 950ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+            -moz-transition: all 950ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+            -o-transition: all 950ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+             transition: all 950ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+            -moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+            -o-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+             transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+        }
+        
+        .garis_pertama.berubahkiri {right:170%;}
+        
+        .garis_pertama:after {
+            content:'';
+            position:absolute;
+            margin:0px 0px 0px 80%;
+            width:90%;
+            height:100%;
+            background-color: {color:Accent Color One};
+        }
+        
+        .garis_pertama:before {
+            content:'';
+            position:absolute;
+            margin:0px 0px 0px -120px;
+            width:30%;
+            height:100%;
+            background-color:{color:Article};
+        }
+        
+        .garis_kedua {
+            position:absolute;
+            left:100%;
+            top:0px;
+            width:100%;
+            height:100%;
+            background-color:{color:Background Color};
+            z-index:9;
+            -webkit-transition: all 950ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+            -moz-transition: all 950ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+            -o-transition: all 950ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+             transition: all 950ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+        }
+        
+        .garis_kedua.geserkiri { left:0%;}
+        
+        .nungguin {
+            width:700px;
+            height:calc(350px + 5vw);
+            position:absolute;
+            left:50%;
+            top:50%;
+            text-align:center;
+            transform:translate(-50%, -40%);
+            color:#111;
+            font-family:'Source Sans Pro', sans-serif;
+            font-size:calc(30px + 0.25vw);
+        }
+        
+        .boxu {
+             position:relative;
+             box-sizing: border-box;
+             -webkit-box-sizing: border-box;
+             float: left;
+             width: 50%;
+             height: 50%;
+        }
+        
+         .about_p {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: {color:Accent Color Two};
+            color: #fff;
+            right:-100%;
+            top: 0%;
+            z-index: 9999999999999999999999999;
+            -webkit-transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+            -moz-transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+            -o-transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+             transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+        }
+    
+        .about_p.ayokebawah {right:0%;}
+        
+        .about_ttp { position:absolute;right:3%;top:4%;width:40px;height:40px;background-color:lightyellow;border-radius:100%;cursor:pointer;}
+        
+        .about_p span {
+            position:absolute;
+            width:calc(460px + 0.25vw);
+            left:50%;
+            top:50%;
+            transform:translate(-50%, -50%);
+            color:{color:Body Ask Text};
+            line-height:170%;
+            text-align:center;
+            font-family:'Source Sans Pro', sans-serif;
+            font-size:calc(16px + 0.28vw);
+        }
+    
+        .boxu:first-child { background-color:{color:Accent Color Two};}
+        .boxu:nth-child(2) { background-color: {color:Accent Color One};}
+        .boxu:nth-child(3) { background-color:{color:Accent Color Three};}
+        .boxu:last-child {background-color:{color:Accent Color Four};}
+        
+         .boxu:first-child a , .boxu:nth-child(2) a, .boxu:nth-child(3) a {
+            color:{color:Body Ask Text};
+        }
+        
+        .boxu .boxbox {
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%, -50%);
+            color:{color:Body Ask Text};
+            text-transform:uppercase;
+            font-weight:bold;
+            font-family:'Source Sans Pro', sans-serif;
+            font-size:calc(16px + 0.29vw);
+            letter-spacing:4px;
+        }   
+        
+        .boxu .boxbox form input[type="text"] {
+            border:none;
+            text-transform:uppercase;
+            font-weight:bold;
+            letter-spacing:4px;
+            text-align:center;
+            background-color:transparent;
+            font-family:'Source Sans Pro', sans-serif;
+            font-size:calc(16px + 0.29vw);
+        }
+        
+        .boxu .boxbox form input[type="text"]:focus {
+            outline:none;
+        }
+        
+        ::-webkit-input-placeholder {color: inherit;}
+        :-moz-placeholder {color: inherit; opacity:1;}
+        ::-moz-placeholder {color: inherit; opacity:1;}
+        :-ms-input-placeholder {color: inherit;}
+    
+        input:focus::-webkit-input-placeholder {color: transparent;}
+        input:focus:-moz-placeholder {color: transparent;}
+        input:focus::-moz-placeholder {color: transparent;}
+        input:focus:-ms-input-placeholder { color: transparent;}
+    
+        .boxbox.terakhirbox {
+            color:{color:Body Text};
+        }
+        
+        .boxbox svg.terakhirbox {
+            fill:{color:Body Text};
+        }
+        
+        .boxbox svg {
+            width:35px;
+            height:35px;
+            margin-bottom:15px;
+        }
+        
+        .holder_links {
+            position: absolute;
+            left: 50%;
+            transform:translateX(-50%);
+            top: 0px;
+            width: 205px;
+            height:70px;
+            z-index:99;
+            background-color: {color:Header Text};
+        }
+        
+        .holder_links .angka {
+            position:absolute;
+            width:205px;
+            text-align:center;
+            margin-top:17px;
+            font-size:calc(22px + 0.25vw);
+            font-family:'PT Serif', sans-serif;
+            color:{color:Body Ask Text};
+            z-index:-1;
+        }
+        
+        .holder_links > nav.bergeser {
+            display:inline-block;
+            width: 205px;
+            margin:11px 15px 0 0px;
+        }
+        
+        .holder_links > nav.bergeser span {
+            color:{color:Article};
+            font-size:calc(38px + 0.25vw);
+        }
+        
+        .kekiri {
+            float:left;
+        }
+        
+        .kekiri:hover:before {
+            width:30px;
+            margin:22px 0px 0px 23px;
+        }
+        
+        .kekiri:before {
+            content:'';
+            position:absolute;
+            width:0px;
+            height:2px;
+            background-color:{color:Body Ask Text};
+            border-radius:5px;
+            margin:22px 0px 0px 23px;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+        }
+        
+        .kekanan {
+            float:right;
+        }
+        
+        .kekanan:before {
+            content:'';
+            position:absolute;
+            width:0px;
+            height:2px;
+            background-color:{color:Body Ask Text};
+            border-radius:5px;
+            margin:22px 0px 0px 33px;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+        }
+        
+        .kekanan:hover:before {
+            width:30px;
+            margin:22px 0px 0px 4px;
+        }
+        
+        .icon_description {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            margin: 30px 0px calc(35px + 0.15vw) 0px;
+            background-color: {color:Accent Color Two};
+            background-image: url('{image:Main Icon}');
+            background-size:cover;
+            background-repeat:no-repeat;
+            border-radius: 100%;
+        }
+        
+        .menu_bar {
+            {block:IndexPage}
+            display:block;
+            {/block:IndexPage}
+            {block:PermalinkPage}
+            display:none;
+            {/block:PermalinkPage}
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: {color:Header Text};
+            z-index: 999999;
+            left: 95px;
+            top: 50%;
+            cursor: pointer;
+            border-radius: 100%;
+            -webkit-animation: fadein 2s; 
+            -moz-animation: fadein 2s;
+            -ms-animation: fadein 2s; 
+            -o-animation: fadein 2s; 
+            animation: fadein 2s;
+        }
+        
+        
+        .menu_bar span {
+            -webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+            -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+            -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);             transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        }
+        
+        .menu_bar span:first-child {
+            position:absolute;
+            margin:18px 0 0 15.5px;
+            width:19px;
+            height:2px;
+            background-color:{color:Body Ask Text};
+        }
+        
+        .menu_bar span:nth-child(2) {
+            position:absolute;
+            margin:24px 0 0 15.5px;
+            width:19px;
+            height:2px;
+            background-color:{color:Body Ask Text};
+        }
+        
+        .menu_bar span:last-child {
+            position:absolute;
+            margin:30px 0 0 15.5px;
+            width:19px;
+            height:2px;
+            background-color:{color:Body Ask Text};
+        }
+        
+        .menu_bar span:nth-child(1).silang_s {
+            width:24px;
+            margin:24px 0 0 13px;
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    
+        .menu_bar span:nth-child(2).silang_d {
+          opacity:0;
+        }
+    
+        .menu_bar span:nth-child(3).silang_t {
+            width:24px;
+            margin:24px 0 0 13px;
+            -ms-transform: rotate(-45deg); 
+            -webkit-transform: rotate(-45deg); 
+            transform: rotate(-45deg);
+        }
+        
+        .sebelummulai {
+            position:absolute;
+            {block:IndexPage}
+            display:block;
+            {/block:IndexPage}
+            {block:PermalinkPage}
+            display:none;
+            {/block:PermalinkPage}
+            left:0px;
+            top:32px;
+            width:100%;
+            height:calc(100% - 30px);
+            background: {color:Accent Color One};
+            z-index:999;
+        }
+        
+        .sebelummulai .tombolvideo {
+            position:absolute;
+            width:80px;
+            height:80px;
+            background-color:transparent;
+            border:5px solid transparent;
+            -moz-border-radius:100%;
+            -webkit-border-radius:100%;
+            border-radius:100%;
+            left:50%;
+            top:50%;
+            cursor:pointer;
+            transform:translate(-50%, -50%);
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+        }
+        
+        .sebelummulai .tombolvideo:hover {
+            border:5px solid #333;
+        }
+        
+        
+        .sebelummulai .tombolvideo span {
+            position:absolute;
+            color:{color:Body Text};
+            margin:2px 0 0 -7px;
+            font-size:calc(65px + 0.25vw);
+        }
+    
+        .video {
+            position: relative;
+            margin-top: 0px;
+            padding-bottom: calc(60% - 11px);
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video iframe,
+        .video object,
+        .video embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .pertanyaan {
+            position:relative;
+            background-color:{color:Accent Color Two};
+            color:{color:Body Ask Text};
+            padding:50px 22px 22px 22px;
+            font-family:'Source Sans Pro', sans-serif;
+            line-height:170%;
+        }
+        
+        .pertanyaan p {
+            position:absolute;
+            margin:-36px 0 0 40px;
+        }
+                    
+        .pertanyaan a {
+            text-transform:uppercase;
+            color:{color:Background Color}!important;
+        }
+        
+        .pertanyaan span img { 
+            position:absolute;
+            width:24px;
+            height:24px;
+            margin:-35px 0 10px 0;
+            border-radius: 4px 4px 4px 4px;
+            -moz-border-radius: 4px 4px 4px 4px;
+            -webkit-border-radius: 4px 4px 4px 4px;
+        }
+        
+        .jawaban {
+            padding:5px 28px 28px 28px;
+            height:calc(100% - 190px);
+            overflow:hidden;
+            color:{color:Body Text};
+            font-family:'Source Sans Pro', sans-serif;
+            line-height:170%;
+        }
+        
+        .chat {
+            padding:25px 30px 30px 30px;
+            overflow:hidden;
+            height:calc(100% - 90px);
+            font-size:14px;
+            font-family:'Source Sans Pro', sans-serif;
+            line-height:170%;
+            background: url('');
+            position:relative;
+        }
+        
+        
+        .chat:::-webkit-scrollbar {
+                width:15px;
+                background:{color:Accent Color One};
+        }
+        .chat::-webkit-scrollbar-track {
+                border:7px solid {color:Accent Color One};
+                background:{color:Accent Color One};
+        }
+        .chat::-webkit-scrollbar-thumb {
+                border:7px solid  {color:Accent Color One};
+                background-color:{color:Header Text};
+        }
+        
+        .chat ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+         
+        .chat li {
+            margin-top:3.5%;
+            margin-bottom:4%;
+            padding: 3%;
+            width: 50%;
+        }
+        
+        .chat .odd {
+            float: left;
+            color:{color:Body Ask Text};
+            background:{color:Header Text};
+        }
+        
+        .chat .odd:before {
+            content:'';
+            display:block;
+            width:0;
+            height:0;
+            border-top:20px solid transparent;
+            border-left:20px solid {color:Header Text};
+            position:absolute;
+            margin:-25px 0 0 15px;
+            z-index:99;
+        }
+
+        .chat .even {
+            float: right;
+            color:{color:Article};
+            background:{color:Body Text};
+        }
+        
+        .chat .even:before {
+            content:'';
+            display:block;
+            width:0;
+            height:0;
+            border-top:20px solid transparent;
+            border-right:20px solid {color:Body Text};
+            position:absolute;
+            margin:-25px 0 0 205px;
+            z-index:1;
+        }
+        
+        #perma_p {
+            width:600px;
+            font-size:13px;
+            line-height:170%;
+            margin-bottom:0.9%;
+            padding-bottom:20px;
+            color:{color:Accent Color Four};
+            font-family:'Source Sans Pro', sans-serif;
+            background-color:{color:Accent Color Two};
+        }
+        
+        #perma_p ol li {
+            list-style-type:none;
+        }
+        
+        #perma_p ol li a {
+            color:#eee;
+        }
+        
+        #perma_p .like:before {
+            content: '\e893';
+            font-family: "Outicons";
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+            font-size:19px;
+            vertical-align:-3px;
+            padding-right:15px;
+        }
+        
+        #perma_p .reblog:before {
+            content: '\e87d';
+            font-family: "Outicons";
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+            font-size:19px;
+            vertical-align:-3px;
+            padding-right:15px;
+        }
+        
+        #perma_p .reply:before {
+            content: '\e8c4';
+            font-family: "Outicons";
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+            font-size:19px;
+            vertical-align:-3px;
+            padding-right:15px;
+        }
+        
+        #perma_p .original_post:before {
+            content: '\e872'; 
+            font-family: "Outicons";
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+            font-size:19px;
+            vertical-align:-3px;
+            padding-right:15px;
+        }
+        
+        #perma_p ol li blockquote {
+            border-left:1px solid {color:Accent Color Four};
+            padding:10px 10px 10px 10px;
+            margin-left:10px;
+        }
+            
+        #perma_p li img.avatar {
+            width: 16px;
+            height: 16px;
+            vertical-align: -4px;
+            margin-right: 15px;
+            -moz-border-radius:5px;
+            -webkit-border-radius:5px;
+            border-radius:5px;
+        }
+        
+        .more_notes_link {
+            display:block;
+            width:584px;
+            padding:8px 8px 8px 8px;
+            color:white;
+            background-color:{color:Header Text};
+            margin:30px 0 -35px -40px;
+            text-align:center;
+        }
+        
+        .more_notes_link:after {
+            content: '\e8b2';
+            font-family: "Outicons";
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+            font-size:19px;
+            vertical-align:-3px;
+            padding-left:15px;
+        }
+        
+        .notes_loading {
+            display:block;
+            width:584px;
+            padding:8px 8px 8px 8px;
+            color:white;
+            background-color:{color:Header Text};
+            margin:30px 0 -35px -40px;
+            text-align:center;
+        }
+        
+        .notes_loading:after {
+            content: '\e898';
+            font-family: "Outicons";
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+            font-size:19px;
+            vertical-align:-1px;
+            padding-left:15px;
+        }
+        
+        .tagged_post {
+            text-align: center;
+            padding-bottom:20px;
+        }
+        
+        .tagged_post a {
+            font-size: 12px;
+            color: {color:Background Color};
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-family: 'Source Sans Pro' sans-serif;
+        }
+        
+        .tagged_post a:hover {
+            color:{color:Accent Color One};
+            text-decoration:underline;
+        }
+
+        .date_and_more {
+            margin: 9px 0 0 20px;
+            padding: 0;
+            color: {color:Background Color};
+        }
+        
+        .keterangan_konten a {
+            color:{color:Background Color};
+        }
+        
+        .keterangan_konten a:hover {
+            color:{color:Accent Color One};
+            padding-bottom:2px;
+            border-bottom:2px solid {color:Accent Color One};
+        }
+    
+        .keterangan_hasilnya {
+            position: absolute;
+            margin: -80px 0 0 -6px;
+            width: 350px;
+            color: {color:Background Color};
+        }
+        
+        .keterangan_konten {
+            width: 350px;
+            padding: 20px 20px 20px 95px;
+            margin-bottom: 4px;
+            margin-top: 30px;
+            border: none;
+        }
+        
+        .keterangan_konten th img {
+            float: left;
+            margin: 1px 0 0;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+        
+        .keterangan_konten table,
+        .keterangan_konten td,
+        .keterangan_konten th {
+            border: none;
+        }
+        
+        .keterangan_konten th {
+           padding-right:50px;
+        }
+        
+        .keterangan_konten th span {
+            display: block;
+            width: 110px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 17px;
+            margin: -3px 0 0 53px;
+            color: {color:Background Color};
+            text-align: left;
+        }
+        
+        .keterangan_konten th span p {
+            position: absolute;
+            width: 200px;
+            font-size: 11px;
+            margin: 0;
+            color:{color:Background Color};
+        }
+    
+    
+        .tumblr_blog img {
+            display:inline-block!important;
+            width: 25px;
+            height: 25px;
+            margin: 10px 15px 10px 0px;
+            vertical-align: -18px;
+            border-radius: 4px;
+        }
+        
+        .pagination_p {
+            position:fixed;
+            right:50px;
+            top:50%;
+            transform:translateY(-50%);
+            -webkit-transition: all 0.7s ease;
+            -moz-transition: all 0.7s ease;
+            -o-transition: all 0.7s ease;
+        }
+        
+        .pagination_p.is-pagi-hidden {
+            right:-100px;
+            -webkit-transition: all 0.7s ease;
+            -moz-transition: all 0.7s ease;
+            -o-transition: all 0.7s ease;
+        }
+        
+        .pagination_p a {
+            width:45px;
+            height:50px;
+            background-color: {color:Accent Color One};
+            padding:0px 5px 15px 5px;
+            margin-bottom:20px;
+            border:2px solid {color:Accent Color Two};
+            -moz-border-radius:100%;
+            -webkit-border-radius:100%;
+            border-radius:100%;
+            display:block;
+            height:40px;
+            font-family:"Roboto Mono", monospace;
+            font-size:18px;
+            font-weight:700;
+        }
+        
+        .pagination_p a span {
+           color: {color:Accent Color Two};
+           font-weight:bold;
+           font-size:40px;
+           margin-left:-5px;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+
+    <div class="menu_bar">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <div class="holder_description">
+    <div class="garis_pertama"></div>
+    <div class="garis_kedua">
+        <div class="nungguin">
+        <!----
+        
+        CUSTOM SVG
+        
+        ------->
+            <div class="boxu">
+                <div class="boxbox">
+                <svg id="i-user" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M22 11 C22 16 19 20 16 20 13 20 10 16 10 11 10 6 12 3 16 3 20 3 22 6 22 11 Z M4 30 L28 30 C28 21 22 20 16 20 10 20 4 21 4 30 Z" />
+</svg>
+<br>
+                    <a href="{text:Custom Link One URL}">{text:Custom Link One}</a>
+                </div>
+            </div>
+            <div class="boxu">
+                <div class="boxbox">
+                    <svg id="i-menu" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24" />
+</svg>
+<br>
+                    <a href="{text:Custom Link Two URL}">{text:Custom Link Two}</a>
+                </div>
+            </div>
+            
+            <div class="boxu">
+                <div class="boxbox">
+                   <svg id="i-mail" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 26 L30 26 30 6 2 6 Z M2 6 L16 16 30 6" />
+</svg>
+<br>
+                    <a href="/ask">CONTACT </a>
+                </div>
+            </div>
+           
+            <div class="boxu">
+                <div class="boxbox terakhirbox">
+                  <svg id="i-search" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <circle cx="14" cy="14" r="12" />
+    <path d="M23 23 L30 30"  />
+</svg>
+<br>
+                   <form action="/search" method="get">
+    <input type="text" name="q" value="{SearchQuery}" placeholder="SEARCH.."/>
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="holder_links">
+            <div class="angka">1/2</div>
+            <nav class="bergeser">
+                <a href="#" class="kekiri"><span class="oi-chevron-left"></span></a>
+                <a href="#" class="kekanan"><span class="oi-chevron-right"></span></a>
+            </nav>
+        </div>
+    
+        <div class="actual_description">
+            <center>
+                <div class="icon_description"></div>
+            </center>
+            {block:Description}{Description}{/block:Description}
+        </div>
+    </div>
+
+    <main>
+        <div class='slide-container {select:Layout style}'>
+        <aside>
+           <div class="body_aside">
+            <center>
+            <a href="/">
+                <div class="icon_description"></div>
+            </a>
+            </center>
+            <ul>
+                <li> <a href="/">HOME</a> </li>
+                <li> <a href="/archive">ARCHIVE</a> </li>
+                <li> <a href="/ask">ASK</a> </li>
+            </ul>
+               {block:Description}{Description}{/block:Description}
+           </div>
+        </aside>
+        
+        
+            <div class='slider'>
+                <div class="garis {select:Layout style}"></div> 
+                 {block:Posts}
+                 <article class="post {block:Audio}post_audio{/block:Audio} {select:Layout style}">
+                  
+                 {block:NewDayDate} 
+                 <div class="masalalu {select:Layout style}">
+                 {Month} {DayOfMonth}, {Year}  
+                 </div>
+                 {/block:NewDayDate}
+                 
+                   <div class="tanggalmainnya {select:Layout style}"> <a href="{Permalink}"><span class="{block:Photo}oi-photo{/block:Photo}{block:Photoset}oi-grid{/block:Photoset}{block:Text}oi-pencil{/block:Text}{block:Answer}oi-help{/block:Answer}{block:Audio}oi-music{/block:Audio}{block:Link}oi-attachment{/block:Link}{block:Quote}oi-chatbox{/block:Quote}{block:Chat}oi-chat{/block:Chat}"></span> {lang:Posted on DayOfWeek Month DayOfMonth Year}</a>
+        
+                  <div class="posisiwindows">
+                       <div class="tombolwindows">
+                            <span>
+                                <svg class="ditutupnya" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path d="M86.1 84H17.6c-2.7 0-4.9-2.2-4.9-4.9s2.2-4.9 4.9-4.9h68.5c2.7 0 4.9 2.2 4.9 4.9S88.8 84 86.1 84z"/>
+</svg>
+                            </span>
+                            <span>
+                                <svg class="ditutupnya2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                <g id="Layer_2">
+                                <path id="XMLID_1_" class="pelebarannya" d="M58.6 80.7H25.1c-2.6 0-4.6-2.1-4.6-4.6V38.6c0-2.6 2.1-4.6 4.6-4.6h33.5c2.6 0 4.6 2.1 4.6 4.6v37.5c0 2.5-2.1 4.6-4.6 4.6z"/>
+                                <path id="XMLID_5_"  class="pelebarannya2"  d="M75.6 19.9H42.2c-3.4 0-6.2 2.8-6.2 6.2v9.8h4.3v-9.8c0-1 .8-1.9 1.9-1.9h33.3c1 0 1.9.8 1.9 1.9v42.3c0 1-.8 1.9-1.9 1.9H60.9v4.3h14.7c3.4 0 6.2-2.8 6.2-6.2V26.1c-.1-3.4-2.8-6.2-6.2-6.2z"/>
+                              </g>
+                            </svg>
+                            </span>
+                            <span>
+                                <svg class="ditutupnya" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path d="M72.5 78.5L22 28.5c-1.9-1.9-1.9-5 0-6.9 1.9-1.9 5-1.9 6.9 0l50.5 50c1.9 1.9 1.9 5 0 6.9-1.9 1.8-5 1.9-6.9 0z"/>
+  <path d="M78.8 28.9L26.2 77.7c-1.8 1.7-4.7 1.6-6.3-.2-1.7-1.8-1.6-4.7.2-6.3l52.6-48.8c1.8-1.7 4.7-1.6 6.3.2 1.7 1.8 1.6 4.6-.2 6.3z"/>
+</svg>
+                            </span>
+                       </div>
+                  </div>
+                  </div>
+                   
+                     {block:Text}
+                     {block:Title}
+                     <h1><a href="{Permalink}">{Title}</a><span class="oi-external"></span></h1>
+                     {/block:Title}
+                     <div class="body_text">{Body}</div>
+                     {/block:Text}
+                     
+                     {block:Photo}
+                     
+                     {block:HighRes}
+                     <a class="pembesaran" href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false">
+                     <span class="oi-eye"></span>
+                     </a> 
+                     {/block:HighRes}
+                     
+                     <div class="body_image {select:Layout style}">
+                     <meta name="{PhotoAlt}" content="{PhotoAlt}"/>
+                     <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                     </div>
+                     
+                     {block:PermalinkPage}
+                     {block:Caption}
+                     <div class="body_caption">
+                     {Caption}
+                     </div>
+                     {/block:Caption}
+                     {/block:PermalinkPage}
+                    
+                     {/block:Photo}
+                    
+                     {block:Photoset}
+                     <a class="pembesaran" href="#" onclick="Tumblr.Lightbox.init([/*{block:Photos}, /**/ { width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }{/block:Photos}]); $('body').toggleClass('tumblr_lightbox_active'); return false">
+                    <span class="oi-eye"></span>
+                    </a>
+
+                     {block:IndexPage}
+                     {block:Photos}
+                     <div class="body_image">
+                     <img src="{PhotoURL-HighRes}" class="highres {select:Layout style}">
+                     </div>
+                     <!--
+                     {/block:Photos}
+                     -->
+                     {/block:IndexPage}
+                     {block:PermalinkPage}
+                     <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
+                    {block:Photos}
+                    <div class="photo-data">
+                        <div class="pxu-photo">
+                        <img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}">
+                        </div>
+                            <a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a>
+                    </div>
+                    {/block:Photos}
+                    </div>
+                     
+                     {block:Caption}
+                     <div class="body_caption">
+                     {Caption}
+                     </div>
+                     {/block:Caption}
+                     {/block:PermalinkPage}
+                     
+                     {/block:Photoset}
+                   
+                     {block:Quote}
+                     <div class="kutipannya">{Quote}</div>
+                     
+                     <div class="sumbernya">{block:Source} <span class="oi-edit"></span> {Source} {/block:Source}</div>
+                     {/block:Quote}
+                   
+                     {block:Link}
+                     <h1> <a href="{URL}" {Target}>{Name}</a> <span class="oi-external"></span></h1>
+                     <div class="body_text">
+                     {block:Description}
+                     {Description}
+                     {/block:Description}
+                     </div>
+                     {/block:Link}
+                    
+                     {block:Chat}
+                     {block:Title}
+                     <h1>{Title}</h1>
+                     {/block:Title}
+                     
+                    <div class="chat-simple">
+                        {block:Lines} {block:Label}
+                        <b>{Label}</b>{/block:Label} {Line}
+                        <br> {/block:Lines}
+                    </div>
+                
+                     <div class="chat">
+                        <ul>
+                            {block:Lines}
+                                <li class="{Alt}">
+                                     {block:Label} 
+                                        {Label} 
+                                     {/block:Label}
+                                     {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                     </div>
+                     {/block:Chat}
+ 
+                     {block:Audio}
+                     <div class="album_blur">
+                     {block:AlbumArt}<img src="{AlbumArtURL}">{/block:AlbumArt}
+                     </div>
+                     <div class="album_art" style="background-image:url('{block:AlbumArt}{AlbumArtURL}{/block:AlbumArt}');background-size:contain;"></div>
+                     <div class="audio">{AudioPlayerBlack}</div>
+                     <div class="audioplayer">
+                        <div class="audio_information">
+                            <p>
+                                <span class="oi-play"></span> {PlayCountWithLabel}
+                                <br><span class="oi-user"></span> {block:Artist}{Artist}{/block:Artist}
+                                <br><span class="oi-playlist"></span> {block:TrackName}{TrackName}{/block:TrackName}
+                                <br><span class="oi-disc"></span> {block:Album}{Album}{/block:Album}
+                            </p>
+                        </div>
+                    </div>
+                    
+                    {block:PermalinkPage}
+                    {block:Caption}
+                    <div class="body_caption">
+                    {Caption}
+                    </div>
+                    {/block:Caption}
+                    {/block:PermalinkPage}
+
+                    {/block:Audio}
+                    
+                    {block:Video}
+                    <div class="sebelummulai">
+                        <div class="tombolvideo">
+                            <span class="oi-play"></span>
+                        </div>
+                    </div>
+                    <div class="video">{Video-500}</div>
+                    
+                    {block:PermalinkPage}
+                    {block:Caption}
+                    <div class="body_caption">
+                    {Caption}
+                    </div>
+                    {/block:Caption}
+                    {/block:PermalinkPage}
+                    
+                    {/block:Video}
+                    
+                    {block:Answer}
+                    <div class="pertanyaan">
+                    <span><img src="{AskerPortraitURL-24}"></span> <p>{Asker} SENT A MESSAGE:</p>
+                    {Question}
+                    </div>
+                     
+                    <div class="jawaban">
+                    {Answer}
+                    </div>
+                    {/block:Answer}
+             </article>
+             
+            
+             {block:PermalinkPage}
+             <div id="perma_p">
+             
+             {block:HasTags}
+                 {block:RebloggedFrom} 
+                
+               
+                 <div class="date_and_more">
+                 <table class="keterangan_konten">
+                  <tr>
+                    <th><img src="{ReblogParentPortraitURL-40}"></img><span><a href="{ReblogParentURL}">{ReblogParentName}</a><p>REBLOGGED FROM</p></span></th>
+                    <th><img src="{ReblogRootPortraitURL-40}"></img><span><a href="{ReblogRootURL}">{ReblogRootName}</a><p>ORIGINALLY BY</p></span></th>
+                  </tr>
+                 </table>
+                 </div>
+         
+                 {/block:RebloggedFrom}
+                        <div class="tagged_post">
+                        {block:Tags} <a href="{TagURL}">#{Tag}</a> {/block:Tags}
+                        </div>
+             {/block:HasTags}
+             
+                {block:PostNotes}
+                        {PostNotes}
+                {/block:PostNotes}
+             </div>
+             {/block:PermalinkPage}
+             {/block:Posts}
+             
+            </div>
+        </div>
+    </main>
+     
+     {block:Pagination}
+     <div class="pagination_p">
+                 {block:NextPage}
+                 <a href="{NextPage}">
+                    <span class="oi-chevron-right"></span>
+                 </a>
+                 {/block:NextPage}
+                 
+                  {block:PreviousPage}
+                 <a href="{PreviousPage}">
+                      <span class="oi-chevron-left"></span>
+                 </a>
+                  {/block:PreviousPage}
+     </div> 
+     {/block:Pagination}
+    <script src="https://static.tumblr.com/qudkd6d/Az6nkemqr/pxuphotoset.min.js"></script>
+    <script src="https://static.tumblr.com/5ojoydj/gC3ov82rj/bandatheme.js"></script>
+    {block:IndexPage}<script src="https://static.tumblr.com/5ojoydj/aVgov48mm/fku-horizontal-scrolling.js"></script>{/block:IndexPage}
+    <script>
+        $(document).ready(function() {
+            // photoset
+            $('.photo-slideshow').pxuPhotoset({
+               lightbox: true,
+               rounded: false,
+               gutter: '3px',
+               borderRadius: '0px',
+               photoset: '.photo-slideshow',
+               photoWrap: '.photo-data',
+               photo: '.pxu-photo'
+            });
+            avatar();
+            errorImage();
+            $('.tombolvideo').click(function () {
+                $('.sebelummulai').fadeOut(200);
+            });
+         
+            // navigation
+            var $deskripsi = $('.actual_description'),
+                $kekanan   = $('.kekanan'),
+                $kekiri    = $('.kekiri');
+            $kekiri.hide();
+            $kekanan.add($kekiri).click(function() {
+                var $this = $(this);
+                if($('.angka').text() == '2/2'){
+                   setTimeout(function () {
+                   $('.angka').text('1/2');
+                   }, 390);
+                } else {
+                    setTimeout(function () {
+                   $('.angka').text('2/2');
+                    }, 390);
+                }
+                $deskripsi.toggleClass("diahilang");
+                $this.data('clicked', true);
+                if($kekanan.data('clicked')) {
+                    setTimeout(function () {
+                    $kekanan.fadeToggle(200);
+                    }, 350);
+                }
+                setTimeout(function () {
+                $kekiri.fadeToggle(200);
+                }, 350);
+                // transition square
+                $('.garis_pertama').toggleClass("berubahkiri");
+                $('.garis_kedua').toggleClass('geserkiri');
+                return false;
+            });
+            
+            // code by roxiestheme.net
+             $('iframe.tumblr_audio_player').load( function() {
+                $('iframe.tumblr_audio_player').contents().find("head").append($("<style type='text/css'> .audio-player {background:transparent !important; color:#fff!important;} </style>"));
+             });
+            
+            // menu bar
+            $('.menu_bar').click(function () {
+                $('.pagination_p').toggleClass("is-pagi-hidden");
+                $(this).toggleClass('keatassana');
+                $('.menu_bar span:first-child').toggleClass('silang_s');
+                $('.menu_bar span:nth-child(2)').toggleClass('silang_d');
+                $('.menu_bar span:last-child').toggleClass('silang_t');
+                $('.holder_description').toggleClass('kebawah');
+                $('main').toggleClass('menghilang');
+            });
+            
+           
+        });
+    </script>
+
+</body>
+</html>
